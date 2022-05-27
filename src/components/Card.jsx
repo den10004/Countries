@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Wrapper = styled.article`
   border-radius: var(--radii);
@@ -44,7 +44,20 @@ const CardListItem = styled.li`
 `;
 
 export const Card = ({ img, name, info = [], onClick }) => {
+  console.log(info);
   return (
- <></>
+    <Wrapper onClick={onClick}>
+      <CardImage src={img} alt={name} />
+      <CardBody>
+        <CardTitle>{name}</CardTitle>
+        <CardList>
+          {info.map((el) => (
+            <CardListItem key={el.title}>
+              <b>{el.title} :</b> {el.description}
+            </CardListItem>
+          ))}
+        </CardList>
+      </CardBody>
+    </Wrapper>
   );
 };
