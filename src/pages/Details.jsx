@@ -11,8 +11,6 @@ export const Details = () => {
   const { push, goBack } = useHistory();
   const [country, setCountry] = useState(null);
 
-  console.log(country);
-
   useEffect(() => {
     axios.get(searchByCountry(name)).then(({ data }) => setCountry(data[0]));
   }, [name]);
@@ -22,7 +20,7 @@ export const Details = () => {
       <Button onClick={goBack}>
         <IoArrowBack /> Back
       </Button>
-      {country && <Info {...country} />}
+      {country && <Info {...country} push={push} />}
     </div>
   );
 };

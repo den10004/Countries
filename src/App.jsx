@@ -7,11 +7,6 @@ import { Main } from "./components/Main";
 import { HomePage } from "./pages/HomePage";
 import { Details } from "./pages/Details";
 import { NotFound } from "./pages/NotFound";
-import { Controls } from "./components/Controls";
-import axios from "axios";
-import { ALL_COUNTRIES } from "./config";
-import { List } from "./components/List";
-import { Card } from "./components/Card";
 
 function App() {
   const [countries, setCountries] = useState([]);
